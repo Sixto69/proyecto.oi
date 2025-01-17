@@ -5,7 +5,7 @@ from .forms import ProductoForm
 
 def lista_productos(request):
     productos = Producto.objects.all()
-    return render(request, 'inventario/lista_productos.html', {'productos': productos})
+    return render(request, 'lista_productos.html', {'productos': productos})
 
 def agregar_producto(request):
     if request.method == 'POST':
@@ -15,5 +15,5 @@ def agregar_producto(request):
             return redirect('lista_productos')
     else:
         form = ProductoForm()
-    return render(request, 'inventario/agregar_producto.html', {'form': form})
+    return render(request, 'agregar_producto.html', {'form': form})
 # Create your views here.
